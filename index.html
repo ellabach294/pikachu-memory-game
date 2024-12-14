@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeFlip</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <!-- Beginning Page -->
+    <div id="start-game">
+        <h1>PokéFlip</h1>
+        <div class="level-container">
+            <p>Select your level</p>
+            <div class="select-container">
+                <form>
+                    <select name="level-option" id="level-option">
+                        <option value="8" selected>16 Cards</option>
+                        <option value="12">24 Cards</option>
+                        <option value="16">32 Cards</option>
+                    </select>
+                </form>
+            </div>
+            <button id="btn-start-game">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Page -->
+    <div id="game">
+        <div class="game-control">
+            <div class="time">
+                <p id="time">00:00</p>
+            </div>
+
+            <div class="count-step">
+                <p id="step">0 Steps</p>
+            </div>
+        </div>
+
+        <div class="game-container"></div>
+    </div>
+
+    <!-- End Game -->
+    <div id="end-game">
+        <div class="info">
+            <h2>Game Over</h2>
+            <p>Congratulation! You finish this level within:</p>
+
+            <div class="info-box">
+                <div class="time-info">
+                    <p>30s</p>
+                </div>
+                <div class="step-info">
+                    <p>10 Steps</p>
+                </div>
+            </div>
+
+            <div class="btns">
+                <button id="btn-restart">Start Over</button>
+                <button id="btn-reload">Back to Home</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

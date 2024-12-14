@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'pokemon';
+    src: url(pokemon.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: url(/img/pikachu-background.webp) right / cover no-repeat;
+}
+
+/* *** START GAME PAGE *** */
+#start-game {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #333;
+}
+
+#start-game h1 {
+    font-family: "pokemon", serif;
+    letter-spacing: 1rem;
+    font-size: 5rem;
+
+    color: #fff;
+    text-shadow: 4px 3px 0px #c52018;
+}
+
+.level-container {
+    width: 100%;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.level-container p {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#level-option {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+#btn-start-game {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #c52018;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* *** GAME PAGE *** */
+#game {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    height: 100vh;
+    width: 100%;
+}
+
+.game-control {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 2rem;
+    width: 100%;
+}
+
+#time, 
+#step {
+    font-size: 1.5rem;
+}
+
+.game-container {
+    gap: 2rem;
+}
+
+.pokemon-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.2s cubic-bezier(.18,.58,.66,.29);
+}
+
+.pokemon-card.active {
+    transform: scale(0.97);
+    transition: transform 0.2s ease-in-out;
+}
+
+.front {
+    background-image: url("img/pokeball.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid #c52018;
+}
+
+.pokemon-card .front,
+.pokemon-card .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.2s cubic-bezier(.18,.58,.66,.29);
+}
+
+.pokemon-card .back h3 {
+    text-transform: capitalize;
+    font-family: "pokemon", serif;
+    letter-spacing: 5px;
+    font-size: 1.25rem;
+}
+
+.pokemon-card .back p {
+    text-transform: capitalize;
+}
+
+.back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+    background-color: #eee;
+    border-radius: 10px;
+    border: 1px solid #c52018;
+}
+
+.pokemon-card.flip .front {
+    transform: rotateY(180deg);
+}
+
+.pokemon-card.flip .back {
+    transform: rotateY(0deg);
+}
+
+/* *** END GAME PAGE *** */
+#end-game {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    background-color: #fff;
+    width: 100%;
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+#btn-restart,
+#btn-reload {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    margin: 0 1rem;
+    background-color: #c52018;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.info h2 {
+    font-family: "pokemon", serif;
+    font-size: 2rem;
+    letter-spacing: 10px;
+}
+
+.info-box {
+    display: flex;
+    gap: 1rem;
+}
+
+.time-info,
+.step-info {
+    margin: 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
